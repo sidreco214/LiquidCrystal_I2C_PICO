@@ -14,8 +14,8 @@ void LiquidCrystal_I2C_PICO::pulse_enable(uint8_t val) {
 }
 
 void LiquidCrystal_I2C_PICO::send_byte(uint8_t val, uint8_t mode) {
-    uint8_t highNible = mode | (val & 0xf0) | LCD_BACKLIGHT;
-    uint8_t lowNible = mode | ((val << 4) & 0xf0) | LCD_BACKLIGHT;
+    uint8_t highNible = mode | (val & 0xf0);
+    uint8_t lowNible = mode | ((val << 4) & 0xf0);
 
     write_byte(highNible);
     pulse_enable(highNible);
