@@ -11,12 +11,15 @@ To use this, you must link LiquidCrystal_I2C and add subdirectory
 
 For example
 CMakeLists.txt in main
+```console
 set(PICO_LIB_PATH ${PICO_SDK_PATH}/../pico-lib)
 add_subdirectory(${PICO_LIB_PATH}/LiquidCrystal_I2C_PICO LiquidCrystal_I2C_PICO)
+```
 
 CMakeLists.txt in source
+```console
 target_link_libraries((target) LiquidCrystal_I2C_PICO)
-
+```
 
 Blog
 https://sidreco.tistory.com/10
