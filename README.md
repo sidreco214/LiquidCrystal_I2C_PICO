@@ -3,14 +3,12 @@ LiquidCrystal_I2C for Raspberry Pi Pico
 
 I2C expender device is PCF8574 IIC I2C(ordinarily used)
 
-Warring
-
+## Warring
 Only 2~4 rows of LCD could be compatible.
 (I test only 1602, 2004, but I expect 0802, 2002, 4002, 1604 are compatible)
 
+## How to use
 To use this, you must link LiquidCrystal_I2C and add subdirectory
-
-For example
 
 CMakeLists.txt in main
 ```console
