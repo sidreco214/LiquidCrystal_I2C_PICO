@@ -1,7 +1,6 @@
 #include "LiquidCrystal_I2C_PICO.h"
 
 void LiquidCrystal_I2C_PICO::write_byte(uint8_t val) {
-    val |= _backlight;
     i2c_write_blocking(_i2c, _addr, &val, 1, false);
 }
 
@@ -14,8 +13,8 @@ void LiquidCrystal_I2C_PICO::pulse_enable(uint8_t val) {
 }
 
 void LiquidCrystal_I2C_PICO::send_byte(uint8_t val, uint8_t mode) {
-    uint8_t highNible = mode | (val & 0xf0);
-    uint8_t lowNible = mode | ((val << 4) & 0xf0);
+    uint8_t highNible = mode | (val & 0xf0) | _backlight;
+    uint8_t lowNible = mode | ((val << 4) & 0xf0) | _backlight;
 
     write_byte(highNible);
     pulse_enable(highNible);
