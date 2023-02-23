@@ -6,4 +6,9 @@ if (NOT TARGET LiquidCrystal_I2C_PICO)
     target_sources(LiquidCrystal_I2C_PICO  INTERFACE 
         ${CMAKE_CURRENT_LIST_DIR}/LiquidCrystal_I2C_PICO.cpp
     )
+    
+    target_link_libraries(LiquidCrystal_I2C_PICO INTERFACE
+        pico_stdlib
+        hardware_i2c    
+    )
 endif()
