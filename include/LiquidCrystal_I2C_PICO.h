@@ -85,7 +85,6 @@ class LiquidCrystal_I2C_PICO {
     /// @param SDApin i2c0 is on 0, 4, 8, 12, 16, 20, i2c1 is on 2, 6, 10, 14, 18, 26
     /// @param SCLpin i2c0 is on 1, 5, 9, 13, 17, 21, i2c1 is on 3, 7, 11, 15, 19, 27
     LiquidCrystal_I2C_PICO(uint8_t address, uint8_t rows, uint8_t columns, i2c_inst_t *i2c, uint8_t SDApin, uint8_t SCLpin);
-    ~LiquidCrystal_I2C_PICO();
 
     void init(); //Initialize LCD, You must run it once before using this class
     void clear();

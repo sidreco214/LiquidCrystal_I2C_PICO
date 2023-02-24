@@ -56,14 +56,6 @@ LiquidCrystal_I2C_PICO::LiquidCrystal_I2C_PICO(uint8_t address, uint8_t rows, ui
     bi_decl(bi_2pins_with_func(_SDApin, _SCLpin, GPIO_FUNC_I2C));
 }
 
-LiquidCrystal_I2C_PICO::~LiquidCrystal_I2C_PICO() {
-    i2c_deinit(_i2c);
-    gpio_deinit(_SDApin);
-    gpio_deinit(_SCLpin);
-
-    bi_decl(bi_2pins_with_func(_SDApin, _SCLpin, GPIO_FUNC_NULL));
-}
-
 
 
 void LiquidCrystal_I2C_PICO::init() {
